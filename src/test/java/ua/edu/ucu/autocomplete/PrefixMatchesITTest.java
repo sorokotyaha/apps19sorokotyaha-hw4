@@ -45,11 +45,12 @@ public class PrefixMatchesITTest {
         String pref = "abc";
         int k = 3;
 
-        Iterable<String> result = pm.wordsWithPrefix(pref, k);
-
-        String[] expResult = {"abc", "abce", "abcd", "abcde"};
-
-        assertThat(result, containsInAnyOrder(expResult));
+//
+//        Iterable<String> result = pm.wordsWithPrefix(pref, k);
+//
+//        String[] expResult = {"abc", "abce", "abcd", "abcde"};
+//
+//        assertThat(result, containsInAnyOrder(expResult));
     }
 
     @Test
@@ -58,25 +59,8 @@ public class PrefixMatchesITTest {
         Tuple tp = new Tuple("abc", 3);
         rw.add(tp);
 
-        //System.out.println(rw.toString());
-
-//        System.out.println(rw.contains("abc"));
-//        System.out.println(rw.contains("ab"));
-//        System.out.println(rw.contains("abb"));
-
         rw.add(new Tuple("abb", 3));
         rw.add(new Tuple("ab", 2));
-
-//        System.out.println(rw.delete("ab"));
-//
-//        System.out.println(rw.toString());
-//        System.out.println(rw.size());
-//
-//        System.out.println(rw.contains("abc"));
-//        System.out.println(rw.contains("ab"));
-//        System.out.println(rw.contains("abb"));
-//
-//        System.out.println(rw.delete("ab"));
 
         for (String word : rw.wordsWithPrefix("abb")) {
             System.out.println(word);
